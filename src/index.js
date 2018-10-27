@@ -1,13 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
-const CARRUSEL = props => {
-  const { values } = props;
-  return values.map(value => <li key={value}>{value}</li>);
-};
+
+import { getProps } from "./utils";
+
+import Carrusel from "./home/Carrusel";
 
 render(
-  <CARRUSEL
-    {...JSON.parse(document.querySelector("#home ul").dataset.props)}
-  />,
+  <Carrusel {...getProps("#home ul")} />,
   document.querySelector("#home ul")
 );
